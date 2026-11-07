@@ -1,0 +1,98 @@
+import { Phone, Mail, MapPin } from 'lucide-react';
+
+export default function Footer() {
+  return (
+    <footer className="bg-slate-950 text-slate-400 text-xs border-t border-slate-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+          {/* Brand Col */}
+          <div className="lg:col-span-2 space-y-4">
+            <div className="flex items-center gap-2.5">
+              <img
+                src="/assets/aistudio/brand_logo.png"
+                alt="JYOTIRLING CAR LEASING & MOBILITY"
+                className="h-10 w-auto object-contain bg-white rounded-lg p-1"
+              />
+            </div>
+            <p className="text-slate-400 leading-relaxed text-xs max-w-sm">
+              Professional chauffeur-driven car rental services and flexible leasing plans for corporate enterprises, industrial plants, government duties, weddings, and family tours across Navi Mumbai, Mumbai, Thane, and Raigad.
+            </p>
+            <div className="text-slate-500 text-[11px]">
+              Office: Sector 18, Koparkhairane, Navi Mumbai, Maharashtra - 400709
+            </div>
+          </div>
+
+          {/* Nav Quick Links */}
+          <div>
+            <h4 className="font-bold text-white text-xs uppercase tracking-wider mb-3">
+              Fleet & Services
+            </h4>
+            <ul className="space-y-2 text-xs">
+              <li><a href="#services" className="hover:text-amber-400 transition-colors">Corporate Car Hiring</a></li>
+              <li><a href="#corporate" className="hover:text-amber-400 transition-colors">Industrial Plant Fleet</a></li>
+              <li><a href="#corporate" className="hover:text-amber-400 transition-colors">Monthly Fixed Basis</a></li>
+              <li><a href="#fleet" className="hover:text-amber-400 transition-colors">Toyota Innova Crysta</a></li>
+              <li><a href="#fleet" className="hover:text-amber-400 transition-colors">Executive Sedans</a></li>
+              <li><a href="#services" className="hover:text-amber-400 transition-colors">Wedding & Events</a></li>
+            </ul>
+          </div>
+
+          {/* Who We Serve */}
+          <div>
+            <h4 className="font-bold text-white text-xs uppercase tracking-wider mb-3">
+              Who We Serve
+            </h4>
+            <ul className="space-y-2 text-xs">
+              <li><a href="#sectors" className="hover:text-amber-400 transition-colors">Corporate Enterprises</a></li>
+              <li><a href="#sectors" className="hover:text-amber-400 transition-colors">Government &amp; Protocol</a></li>
+              <li><a href="#sectors" className="hover:text-amber-400 transition-colors">Industrial &amp; MIDC Plants</a></li>
+              <li><a href="#sectors" className="hover:text-amber-400 transition-colors">Hotels &amp; Hospitality</a></li>
+              <li><a href="#sectors" className="hover:text-amber-400 transition-colors">Schools &amp; Institutes</a></li>
+              <li><a href="#sectors" className="hover:text-amber-400 transition-colors">Self Drive on Rent</a></li>
+            </ul>
+          </div>
+
+          {/* Contact Direct */}
+          <div>
+            <h4 className="font-bold text-white text-xs uppercase tracking-wider mb-3">
+              Direct Dispatch
+            </h4>
+            <div className="space-y-2 text-xs">
+              <div>
+                <span className="text-slate-500 block text-[10px]">Call & WhatsApp:</span>
+                <a href="tel:7038340008" className="text-white hover:text-amber-400 font-mono font-bold">
+                  +91 7038340008
+                </a>
+              </div>
+              <div>
+                <span className="text-slate-500 block text-[10px]">Email Dispatch:</span>
+                <a href="mailto:info@jyotrilingmobility.com" className="text-white hover:text-amber-400 block font-medium">
+                  info@jyotrilingmobility.com
+                </a>
+                <a href="mailto:amolgole970@gmail.com" className="text-slate-400 hover:text-amber-400 text-[11px] block mt-0.5">
+                  amolgole970@gmail.com
+                </a>
+              </div>
+              <div>
+                <span className="text-slate-500 block text-[10px]">Invoicing:</span>
+                <span className="text-slate-300">GST Input Tax Credit</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="mt-12 pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-[11px]">
+          <div>
+            © {new Date().getFullYear()} Jyotirling Mobility. All rights reserved.
+          </div>
+          <div className="flex items-center gap-4">
+            <span>Navi Mumbai, Maharashtra, India</span>
+            <span>·</span>
+            <span>24/7 Fleet Dispatch</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
