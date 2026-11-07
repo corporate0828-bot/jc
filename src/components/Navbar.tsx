@@ -35,7 +35,7 @@ export default function Navbar({ onOpenQuoteModal, onOpenInquiryDrawer, inquiryC
           </a>
 
           <a
-            href="#services"
+            href="#sectors"
             className="flex flex-col items-center gap-1 group py-1 hover:text-[#0A1C38] transition-colors"
           >
             <Car className="w-5 h-5 text-slate-600 group-hover:text-[#F4B41A] transition-colors" />
@@ -45,7 +45,7 @@ export default function Navbar({ onOpenQuoteModal, onOpenInquiryDrawer, inquiryC
           </a>
 
           <a
-            href="#corporate"
+            href="#why-us"
             className="flex flex-col items-center gap-1 group py-1 hover:text-[#0A1C38] transition-colors"
           >
             <Building2 className="w-5 h-5 text-slate-600 group-hover:text-[#F4B41A] transition-colors" />
@@ -138,7 +138,7 @@ export default function Navbar({ onOpenQuoteModal, onOpenInquiryDrawer, inquiryC
               <span>Home</span>
             </a>
             <a
-              href="#services"
+              href="#sectors"
               onClick={() => setMobileMenuOpen(false)}
               className="flex items-center gap-3 py-1.5 text-slate-800 hover:text-amber-600 transition-colors"
             >
@@ -146,7 +146,7 @@ export default function Navbar({ onOpenQuoteModal, onOpenInquiryDrawer, inquiryC
               <span>Our Services</span>
             </a>
             <a
-              href="#corporate"
+              href="#why-us"
               onClick={() => setMobileMenuOpen(false)}
               className="flex items-center gap-3 py-1.5 text-slate-800 hover:text-amber-600 transition-colors"
             >

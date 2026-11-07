@@ -26,10 +26,10 @@ export default function FleetSection({ onSelectCarForQuote }: FleetSectionProps)
               Our Modern Fleet
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight text-balance">
-              Vehicles Engineered for Every Requirement
+              We Provide Vehicles on Rent As Well
             </h2>
             <p className="mt-2 text-sm sm:text-base text-slate-600">
-              From executive 7-seater MUVs for corporate delegations to economical sedans for city errands, each car is sanitized, insured, and handled by an experienced chauffeur.
+              Family trips in locations, per day rent basis, kilometers basis etc.
             </p>
           </div>
 

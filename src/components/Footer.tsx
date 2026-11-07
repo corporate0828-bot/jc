@@ -28,12 +28,12 @@ export default function Footer() {
               Fleet & Services
             </h4>
             <ul className="space-y-2 text-xs">
-              <li><a href="#services" className="hover:text-amber-400 transition-colors">Corporate Car Hiring</a></li>
-              <li><a href="#corporate" className="hover:text-amber-400 transition-colors">Industrial Plant Fleet</a></li>
-              <li><a href="#corporate" className="hover:text-amber-400 transition-colors">Monthly Fixed Basis</a></li>
+              <li><a href="#sectors" className="hover:text-amber-400 transition-colors">Corporate Car Hiring</a></li>
+              <li><a href="#sectors" className="hover:text-amber-400 transition-colors">Industrial Plant Fleet</a></li>
+              <li><a href="#sectors" className="hover:text-amber-400 transition-colors">Monthly Fixed Basis</a></li>
               <li><a href="#fleet" className="hover:text-amber-400 transition-colors">Toyota Innova Crysta</a></li>
               <li><a href="#fleet" className="hover:text-amber-400 transition-colors">Executive Sedans</a></li>
-              <li><a href="#services" className="hover:text-amber-400 transition-colors">Wedding & Events</a></li>
+              <li><a href="#sectors" className="hover:text-amber-400 transition-colors">Wedding & Events</a></li>
             </ul>
           </div>
 

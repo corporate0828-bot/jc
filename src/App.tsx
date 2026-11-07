@@ -4,8 +4,6 @@ import Hero from './components/Hero';
 import SectorsServed from './components/SectorsServed';
 import FareCalculator from './components/FareCalculator';
 import FleetSection from './components/FleetSection';
-import CorporateIndustrial from './components/CorporateIndustrial';
-import ServicesSection from './components/ServicesSection';
 import TrustProof from './components/TrustProof';
 import ContactSection from './components/ContactSection';
 import QuotationModal from './components/QuotationModal';
@@ -133,16 +131,6 @@ export default function App() {
         {/* Modern Fleet Catalog with Inspector */}
         <FleetSection
           onSelectCarForQuote={handleSelectCarForQuote}
-        />
-
-        {/* Corporate & Industrial Car Hiring Focus */}
-        <CorporateIndustrial
-          onOpenQuoteModal={handleOpenQuoteModal}
-        />
-
-        {/* Services Overview */}
-        <ServicesSection
-          onSelectService={handleSelectService}
         />
 
         {/* Testimonials & FAQs */}
