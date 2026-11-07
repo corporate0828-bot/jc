@@ -59,7 +59,7 @@ export default function Hero({ onOpenQuoteModal }: HeroProps) {
             <div className="space-y-1.5 text-sm sm:text-base mb-7">
               <p className="text-white font-medium flex items-center gap-2">
                 <span>Reliable Cars. Professional Drivers.</span>
-                <span className="text-[#F4B41A] font-bold text-sm">✈</span>
+                <Car className="w-4 h-4 text-[#F4B41A] shrink-0" />
               </p>
               <p className="text-[#F4B41A] font-semibold text-sm sm:text-base">
                 Flexible Leasing Plans for Short, Mid &amp; Long Term.
@@ -80,11 +80,11 @@ export default function Hero({ onOpenQuoteModal }: HeroProps) {
                   </span>
                 </div>
 
-                {/* 2. Monthly & Long-Term Contracts */}
+                {/* 2. Monthly, Mid & Long-Term Contracts */}
                 <div className="flex flex-col items-center text-center px-1 sm:border-l sm:border-amber-500/30">
                   <Calendar className="w-7 h-7 text-[#F4B41A] mb-1.5 shrink-0" />
                   <span className="text-xs sm:text-sm font-bold text-white leading-tight">
-                    Monthly &amp;<br />Long-Term Contracts
+                    Monthly, Mid &amp;<br />Long-Term Contracts
                   </span>
                 </div>
 

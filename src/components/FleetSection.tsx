@@ -11,7 +11,12 @@ export default function FleetSection({ onSelectCarForQuote }: FleetSectionProps)
   const [selectedCategory, setSelectedCategory] = useState<VehicleCategory>('all');
   const [activeModalVehicle, setActiveModalVehicle] = useState<Vehicle | null>(null);
 
-  const filteredVehicles = FLEET_VEHICLES.filter((car) => {
+  // Exclude WagonR card from modern fleet section as requested
+  const fleetVehicles = FLEET_VEHICLES.filter(
+    (car) => car.id !== 'maruti-wagonr' && !car.name.toLowerCase().includes('wagonr')
+  );
+
+  const filteredVehicles = fleetVehicles.filter((car) => {
     if (selectedCategory === 'all') return true;
     return car.category === selectedCategory;
   });
@@ -43,7 +48,7 @@ export default function FleetSection({ onSelectCarForQuote }: FleetSectionProps)
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
-              All Vehicles ({FLEET_VEHICLES.length})
+              All Vehicles ({fleetVehicles.length})
             </button>
             <button
               onClick={() => setSelectedCategory('corporate_muv')}
@@ -74,16 +79,6 @@ export default function FleetSection({ onSelectCarForQuote }: FleetSectionProps)
               }`}
             >
               SUVs & Crossovers
-            </button>
-            <button
-              onClick={() => setSelectedCategory('hatchback')}
-              className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors whitespace-nowrap shrink-0 ${
-                selectedCategory === 'hatchback'
-                  ? 'bg-slate-900 text-white shadow-sm'
-                  : 'text-slate-600 hover:text-slate-900'
-              }`}
-            >
-              Hatchback
             </button>
           </div>
         </div>
