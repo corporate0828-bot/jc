@@ -29,7 +29,7 @@ export default function QuotationModal({
         <div className="p-6 border-b border-slate-100 flex items-center justify-between sticky top-0 bg-white/95 backdrop-blur z-10">
           <div>
             <div className="text-xs font-bold uppercase tracking-wider text-amber-600">
-              Jyotirling Mobility
+              Jyotirling Car Leasing &amp; Mobility
             </div>
             <h3 className="text-xl font-bold text-slate-900">
               Request a Vehicle Quotation

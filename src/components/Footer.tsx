@@ -25,7 +25,7 @@ export default function Footer() {
           {/* Nav Quick Links */}
           <div>
             <h4 className="font-bold text-white text-xs uppercase tracking-wider mb-3">
-              Fleet & Services
+              Fleet &amp; Services
             </h4>
             <ul className="space-y-2 text-xs">
               <li><a href="#sectors" className="hover:text-amber-400 transition-colors">Corporate Car Hiring</a></li>
@@ -33,7 +33,7 @@ export default function Footer() {
               <li><a href="#sectors" className="hover:text-amber-400 transition-colors">Monthly Fixed Basis</a></li>
               <li><a href="#fleet" className="hover:text-amber-400 transition-colors">Toyota Innova Crysta</a></li>
               <li><a href="#fleet" className="hover:text-amber-400 transition-colors">Executive Sedans</a></li>
-              <li><a href="#sectors" className="hover:text-amber-400 transition-colors">Wedding & Events</a></li>
+              <li><a href="#sectors" className="hover:text-amber-400 transition-colors">Wedding &amp; Events</a></li>
             </ul>
           </div>
 
@@ -43,12 +43,12 @@ export default function Footer() {
               Who We Serve
             </h4>
             <ul className="space-y-2 text-xs">
-              <li><a href="#sectors" className="hover:text-amber-400 transition-colors">Corporate Enterprises</a></li>
-              <li><a href="#sectors" className="hover:text-amber-400 transition-colors">Government &amp; Protocol</a></li>
-              <li><a href="#sectors" className="hover:text-amber-400 transition-colors">Industrial &amp; MIDC Plants</a></li>
-              <li><a href="#sectors" className="hover:text-amber-400 transition-colors">Hotels &amp; Hospitality</a></li>
-              <li><a href="#sectors" className="hover:text-amber-400 transition-colors">Schools &amp; Institutes</a></li>
-              <li><a href="#sectors" className="hover:text-amber-400 transition-colors">Self Drive on Rent</a></li>
+              <li><a href="#sectors" className="hover:text-amber-400 transition-colors">IT / Corporate companies</a></li>
+              <li><a href="#sectors" className="hover:text-amber-400 transition-colors">Self Drive, Individual Travel</a></li>
+              <li><a href="#sectors" className="hover:text-amber-400 transition-colors">Manufacturing / MIDC companies</a></li>
+              <li><a href="#sectors" className="hover:text-amber-400 transition-colors">Banks and financial companies</a></li>
+              <li><a href="#sectors" className="hover:text-amber-400 transition-colors">Pharmaceutical / Logistic companies</a></li>
+              <li><a href="#sectors" className="hover:text-amber-400 transition-colors">Industrial companies / Private offices</a></li>
             </ul>
           </div>
 
@@ -59,15 +59,15 @@ export default function Footer() {
             </h4>
             <div className="space-y-2 text-xs">
               <div>
-                <span className="text-slate-500 block text-[10px]">Call & WhatsApp:</span>
+                <span className="text-slate-500 block text-[10px]">Call &amp; WhatsApp:</span>
                 <a href="tel:7038340008" className="text-white hover:text-amber-400 font-mono font-bold">
                   +91 7038340008
                 </a>
               </div>
               <div>
                 <span className="text-slate-500 block text-[10px]">Email Dispatch:</span>
-                <a href="mailto:info@jyotrilingmobility.com" className="text-white hover:text-amber-400 block font-medium">
-                  info@jyotrilingmobility.com
+                <a href="mailto:info@jyotirlingcarsleasing.com" className="text-white hover:text-amber-400 block font-medium">
+                  info@jyotirlingcarsleasing.com
                 </a>
                 <a href="mailto:amolgole970@gmail.com" className="text-slate-400 hover:text-amber-400 text-[11px] block mt-0.5">
                   amolgole970@gmail.com
@@ -84,7 +84,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-[11px]">
           <div>
-            © {new Date().getFullYear()} Jyotirling Mobility. All rights reserved.
+            © {new Date().getFullYear()} Jyotirling Car Leasing &amp; Mobility. All rights reserved.
           </div>
           <div className="flex items-center gap-4">
             <span>Navi Mumbai, Maharashtra, India</span>

@@ -10,9 +10,11 @@ import QuotationModal from './components/QuotationModal';
 import InquiryDrawer from './components/InquiryDrawer';
 import Footer from './components/Footer';
 import FloatingActions from './components/FloatingActions';
+import TermsPage from './components/TermsPage';
 import { InquiryRecord } from './types';
 
 export default function App() {
+  const [currentPage, setCurrentPage] = useState<'home' | 'terms'>('home');
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [isInquiryDrawerOpen, setIsInquiryDrawerOpen] = useState(false);
 
@@ -108,42 +110,51 @@ export default function App() {
       <Navbar
         onOpenQuoteModal={() => handleOpenQuoteModal()}
         onOpenInquiryDrawer={() => setIsInquiryDrawerOpen(true)}
+        onOpenTerms={() => setCurrentPage('terms')}
         inquiryCount={inquiries.length}
       />
 
       <main className="flex-1">
-        {/* Hero Section */}
-        <Hero
-          onOpenQuoteModal={handleOpenQuoteModal}
-          onScrollToCalculator={handleScrollToCalculator}
-        />
+        {currentPage === 'terms' ? (
+          <TermsPage onBackToHome={() => setCurrentPage('home')} />
+        ) : (
+          <>
+            {/* Hero Section */}
+            <Hero
+              onOpenQuoteModal={handleOpenQuoteModal}
+              onScrollToCalculator={handleScrollToCalculator}
+            />
 
-        {/* Sectors We Provide Services To */}
-        <SectorsServed
-          onSelectSector={handleSelectService}
-        />
+            {/* Sectors We Provide Services To */}
+            <SectorsServed
+              onSelectSector={handleSelectService}
+              onOpenTerms={() => setCurrentPage('terms')}
+            />
 
-        {/* Instant Fare Estimator & Rate Calculator */}
-        <FareCalculator
-          onTransferToQuote={handleTransferFromCalculator}
-        />
+            {/* Instant Fare Estimator & Rate Calculator */}
+            <FareCalculator
+              onTransferToQuote={handleTransferFromCalculator}
+            />
 
-        {/* Modern Fleet Catalog with Inspector */}
-        <FleetSection
-          onSelectCarForQuote={handleSelectCarForQuote}
-        />
+            {/* Modern Fleet Catalog with Inspector */}
+            <FleetSection
+              onSelectCarForQuote={handleSelectCarForQuote}
+            />
 
-        {/* Testimonials & FAQs */}
-        <TrustProof />
+            {/* Testimonials & FAQs */}
+            <TrustProof />
 
-        {/* Contact Office & Quotation Form */}
-        <ContactSection
-          onInquirySubmitted={handleInquirySubmitted}
-          presetCar={quotePresetCar}
-          presetService={quotePresetService}
-          presetEstimatedFare={quotePresetFare}
-          presetNotes={quotePresetNotes}
-        />
+            {/* Contact Office & Quotation Form */}
+            <ContactSection
+              onInquirySubmitted={handleInquirySubmitted}
+              onOpenTerms={() => setCurrentPage('terms')}
+              presetCar={quotePresetCar}
+              presetService={quotePresetService}
+              presetEstimatedFare={quotePresetFare}
+              presetNotes={quotePresetNotes}
+            />
+          </>
+        )}
       </main>
 
       {/* Footer */}

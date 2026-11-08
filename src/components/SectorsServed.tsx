@@ -12,6 +12,7 @@ import {
 
 interface SectorsServedProps {
   onSelectSector: (sectorName: string) => void;
+  onOpenTerms?: () => void;
 }
 
 export const SECTORS_DATA = [
@@ -95,9 +96,10 @@ const WHAT_WE_SERVE_POINTS = [
   'Car Rental',
   'Tour & Travels',
   'Local & Outstation Trips',
+  'Cancellation and refund policy',
 ];
 
-export default function SectorsServed({ onSelectSector }: SectorsServedProps) {
+export default function SectorsServed({ onSelectSector, onOpenTerms }: SectorsServedProps) {
   return (
     <>
       {/* Who We Serve Section */}
@@ -220,19 +222,27 @@ export default function SectorsServed({ onSelectSector }: SectorsServedProps) {
 
           {/* 4x2 Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {WHAT_WE_SERVE_POINTS.map((point, index) => (
-              <div
-                key={index}
-                className="bg-slate-50 hover:bg-slate-100 border border-slate-200 hover:border-amber-400/60 rounded-xl p-5 flex items-center gap-4 transition-all shadow-2xs group"
-              >
-                <div className="w-10 h-10 rounded-lg bg-[#0A1C38] text-amber-400 font-mono font-bold text-sm flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-                  0{index + 1}
+            {WHAT_WE_SERVE_POINTS.map((point, index) => {
+              const isPolicy = index === 7;
+              return (
+                <div
+                  key={index}
+                  onClick={isPolicy && onOpenTerms ? onOpenTerms : undefined}
+                  className={`bg-slate-50 hover:bg-slate-100 border border-slate-200 hover:border-amber-400/60 rounded-xl p-5 flex items-center gap-4 transition-all shadow-2xs group ${
+                    isPolicy && onOpenTerms ? 'cursor-pointer hover:border-amber-500' : ''
+                  }`}
+                  role={isPolicy && onOpenTerms ? 'button' : undefined}
+                  tabIndex={isPolicy && onOpenTerms ? 0 : undefined}
+                >
+                  <div className="w-10 h-10 rounded-lg bg-[#0A1C38] text-amber-400 font-mono font-bold text-sm flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                    0{index + 1}
+                  </div>
+                  <div className="font-bold text-sm sm:text-base text-slate-900 leading-snug">
+                    {point}
+                  </div>
                 </div>
-                <div className="font-bold text-sm sm:text-base text-slate-900 leading-snug">
-                  {point}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

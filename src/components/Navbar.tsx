@@ -1,13 +1,14 @@
 import { useState } from 'react';
-import { Home, Car, Building2, Users, Mail, Phone, Menu, X } from 'lucide-react';
+import { Home, Car, Building2, Users, Mail, Phone, Menu, X, FileText } from 'lucide-react';
 
 interface NavbarProps {
   onOpenQuoteModal: () => void;
   onOpenInquiryDrawer: () => void;
+  onOpenTerms: () => void;
   inquiryCount: number;
 }
 
-export default function Navbar({ onOpenQuoteModal, onOpenInquiryDrawer, inquiryCount }: NavbarProps) {
+export default function Navbar({ onOpenQuoteModal, onOpenInquiryDrawer, onOpenTerms, inquiryCount }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -73,6 +74,17 @@ export default function Navbar({ onOpenQuoteModal, onOpenInquiryDrawer, inquiryC
               Contact
             </span>
           </a>
+
+          <button
+            type="button"
+            onClick={onOpenTerms}
+            className="flex flex-col items-center gap-1 group py-1 hover:text-[#0A1C38] transition-colors cursor-pointer"
+          >
+            <FileText className="w-5 h-5 text-slate-600 group-hover:text-[#F4B41A] transition-colors" />
+            <span className="whitespace-nowrap font-medium text-slate-800 group-hover:text-[#0A1C38]">
+              Terms
+            </span>
+          </button>
         </nav>
 
         {/* Right: Phone Container + WhatsApp Button + 3-line Hamburger Menu */}
@@ -172,6 +184,17 @@ export default function Navbar({ onOpenQuoteModal, onOpenInquiryDrawer, inquiryC
               <Mail className="w-5 h-5 text-slate-500" />
               <span>Contact</span>
             </a>
+            <button
+              type="button"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenTerms();
+              }}
+              className="flex items-center gap-3 py-1.5 text-slate-800 hover:text-amber-600 transition-colors text-left w-full cursor-pointer"
+            >
+              <FileText className="w-5 h-5 text-slate-500" />
+              <span>Terms &amp; Conditions</span>
+            </button>
 
             <div className="pt-3 border-t border-slate-100 flex flex-col gap-2.5">
               {inquiryCount > 0 && (

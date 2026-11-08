@@ -72,7 +72,7 @@ export default function QuoteForm({
     // Store in localStorage
     saveToStorage(record);
 
-    const text = `Hello Jyotirling Mobility,%0A%0A*Quotation Enquiry [${record.id}]*%0A- *Name:* ${encodeURIComponent(name)}%0A- *Mobile:* ${encodeURIComponent(mobile)}%0A- *Company:* ${encodeURIComponent(company || 'Individual / Family')}%0A- *Service Required:* ${encodeURIComponent(service)}%0A- *Car Required:* ${encodeURIComponent(car)}%0A- *Number of Cars:* ${numCars}%0A- *Date Required:* ${encodeURIComponent(date || 'Flexible')}%0A- *Duration / Basis:* ${encodeURIComponent(duration || 'As per package')}%0A- *Pickup / Route:* ${encodeURIComponent(pickup || 'Not specified')}%0A- *Notes / Details:* ${encodeURIComponent(message || 'None')}${estimatedFare ? `%0A- *Calculated Estimate:* Rs. ${estimatedFare.toLocaleString('en-IN')}` : ''}%0A%0APlease confirm availability and share final quote.`;
+    const text = `Hello Jyotirling Car Leasing &amp; Mobility,%0A%0A*Quotation Enquiry [${record.id}]*%0A- *Name:* ${encodeURIComponent(name)}%0A- *Mobile:* ${encodeURIComponent(mobile)}%0A- *Company:* ${encodeURIComponent(company || 'Individual / Family')}%0A- *Service Required:* ${encodeURIComponent(service)}%0A- *Car Required:* ${encodeURIComponent(car)}%0A- *Number of Cars:* ${numCars}%0A- *Date Required:* ${encodeURIComponent(date || 'Flexible')}%0A- *Duration / Basis:* ${encodeURIComponent(duration || 'As per package')}%0A- *Pickup / Route:* ${encodeURIComponent(pickup || 'Not specified')}%0A- *Notes / Details:* ${encodeURIComponent(message || 'None')}${estimatedFare ? `%0A- *Calculated Estimate:* Rs. ${estimatedFare.toLocaleString('en-IN')}` : ''}%0A%0APlease confirm availability and share final quote.`;
 
     window.open(`https://wa.me/917038340008?text=${text}`, '_blank');
 
@@ -148,7 +148,7 @@ export default function QuoteForm({
 
         <div className="flex flex-col sm:flex-row justify-center gap-3">
           <a
-            href={`https://wa.me/917038340008?text=Hello%20Jyotirling%20Mobility%2C%20following%20up%20on%20my%20quotation%20reference%20${submittedRecord.id}`}
+            href={`https://wa.me/917038340008?text=Hello%20Jyotirling%20Car%20Leasing%20and%20Mobility%2C%20following%20up%20on%20my%20quotation%20reference%20${submittedRecord.id}`}
             target="_blank"
             rel="noreferrer"
             className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs rounded-lg transition-colors flex items-center justify-center gap-2"

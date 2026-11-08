@@ -173,9 +173,9 @@ export default function Hero({ onOpenQuoteModal }: HeroProps) {
 
               {/* 3. Send Email Button */}
               <a
-                href="mailto:info@jyotrilingmobility.com?subject=Car%20Leasing%20Inquiry%20-%20Jyotirling%20Mobility"
+                href="mailto:info@jyotirlingcarsleasing.com?subject=Car%20Leasing%20Inquiry%20-%20Jyotirling%20Car%20Leasing%20and%20Mobility"
                 className="bg-[#0A1C38] hover:bg-[#06142A] text-white p-3 rounded-xl transition-all flex items-center gap-3 group shadow-sm hover:-translate-y-0.5"
-                title="Send Email: info@jyotrilingmobility.com"
+                title="Send Email: info@jyotirlingcarsleasing.com"
               >
                 <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-[#F4B41A]/20 transition-colors">
                   <Mail className="w-5 h-5 text-white group-hover:text-[#F4B41A] transition-colors" />
@@ -185,7 +185,7 @@ export default function Hero({ onOpenQuoteModal }: HeroProps) {
                     Send Email
                   </span>
                   <span className="text-[11px] font-medium text-slate-200 truncate">
-                    info@jyotrilingmobility.com
+                    info@jyotirlingcarsleasing.com
                   </span>
                 </div>
               </a>

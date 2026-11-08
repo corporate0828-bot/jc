@@ -5,14 +5,11 @@ import {
   MessageSquare,
   ArrowRight,
   ShieldCheck,
-  Sparkles,
   Phone,
-  Calendar,
-  Fuel,
   Users,
+  Fuel,
   Wrench,
   FileCheck2,
-  TrendingDown,
 } from 'lucide-react';
 
 export interface LeaseVehicleItem {
@@ -33,9 +30,9 @@ export interface LeaseVehicleItem {
 
 export const LEASE_CATEGORIES = [
   { id: 'hatchback', label: 'Hatchback', count: 6, minCost: 39999 },
-  { id: 'sedan', label: 'Sedan', count: 6, minCost: 46000 },
-  { id: 'muvs', label: "MUV's", count: 6, minCost: 54000 },
-  { id: 'suvs', label: "SUV's", count: 6, minCost: 60000 },
+  { id: 'sedan', label: 'Sedan', count: 6, minCost: 46999 },
+  { id: 'muvs', label: "MUV's", count: 6, minCost: 54999 },
+  { id: 'suvs', label: "SUV's", count: 6, minCost: 67999 },
 ] as const;
 
 export type LeaseCategoryType = (typeof LEASE_CATEGORIES)[number]['id'];
@@ -62,7 +59,7 @@ export const LEASE_CATALOG: Record<LeaseCategoryType, LeaseVehicleItem[]> = {
       name: 'Tata Tiago',
       brand: 'Tata Motors',
       category: 'hatchback',
-      approxMonthlyLease: 39999,
+      approxMonthlyLease: 40999,
       seats: 5,
       fuelType: 'Petrol / CNG',
       transmission: 'Manual / AMT',
@@ -77,7 +74,7 @@ export const LEASE_CATALOG: Record<LeaseCategoryType, LeaseVehicleItem[]> = {
       name: 'Maruti Suzuki Swift',
       brand: 'Maruti Suzuki',
       category: 'hatchback',
-      approxMonthlyLease: 42500,
+      approxMonthlyLease: 42999,
       seats: 5,
       fuelType: 'Petrol',
       transmission: 'Manual / AMT',
@@ -92,7 +89,7 @@ export const LEASE_CATALOG: Record<LeaseCategoryType, LeaseVehicleItem[]> = {
       name: 'Hyundai Grand i10 Nios',
       brand: 'Hyundai',
       category: 'hatchback',
-      approxMonthlyLease: 41000,
+      approxMonthlyLease: 41499,
       seats: 5,
       fuelType: 'Petrol / CNG',
       transmission: 'Manual / AMT',
@@ -107,7 +104,7 @@ export const LEASE_CATALOG: Record<LeaseCategoryType, LeaseVehicleItem[]> = {
       name: 'Maruti Suzuki Baleno',
       brand: 'Maruti Suzuki',
       category: 'hatchback',
-      approxMonthlyLease: 44500,
+      approxMonthlyLease: 44999,
       seats: 5,
       fuelType: 'Petrol / CNG',
       transmission: 'Manual / AGS',
@@ -139,7 +136,7 @@ export const LEASE_CATALOG: Record<LeaseCategoryType, LeaseVehicleItem[]> = {
       name: 'Maruti Suzuki Dzire',
       brand: 'Maruti Suzuki',
       category: 'sedan',
-      approxMonthlyLease: 47000,
+      approxMonthlyLease: 47999,
       seats: 5,
       fuelType: 'Petrol / CNG',
       transmission: 'Manual / AGS',
@@ -154,7 +151,7 @@ export const LEASE_CATALOG: Record<LeaseCategoryType, LeaseVehicleItem[]> = {
       name: 'Hyundai Aura',
       brand: 'Hyundai',
       category: 'sedan',
-      approxMonthlyLease: 46000,
+      approxMonthlyLease: 46999,
       seats: 5,
       fuelType: 'Petrol / CNG',
       transmission: 'Manual / AMT',
@@ -169,7 +166,7 @@ export const LEASE_CATALOG: Record<LeaseCategoryType, LeaseVehicleItem[]> = {
       name: 'Honda Amaze',
       brand: 'Honda',
       category: 'sedan',
-      approxMonthlyLease: 49500,
+      approxMonthlyLease: 49999,
       seats: 5,
       fuelType: 'Petrol',
       transmission: 'Manual / Smooth CVT',
@@ -184,7 +181,7 @@ export const LEASE_CATALOG: Record<LeaseCategoryType, LeaseVehicleItem[]> = {
       name: 'Honda City',
       brand: 'Honda',
       category: 'sedan',
-      approxMonthlyLease: 68000,
+      approxMonthlyLease: 67999,
       seats: 5,
       fuelType: 'Petrol / e:HEV Hybrid',
       transmission: 'Manual / CVT',
@@ -199,7 +196,7 @@ export const LEASE_CATALOG: Record<LeaseCategoryType, LeaseVehicleItem[]> = {
       name: 'Hyundai Verna',
       brand: 'Hyundai',
       category: 'sedan',
-      approxMonthlyLease: 72000,
+      approxMonthlyLease: 71999,
       seats: 5,
       fuelType: 'Turbo Petrol',
       transmission: 'Manual / 7-Speed DCT',
@@ -214,7 +211,7 @@ export const LEASE_CATALOG: Record<LeaseCategoryType, LeaseVehicleItem[]> = {
       name: 'Skoda Slavia',
       brand: 'Skoda',
       category: 'sedan',
-      approxMonthlyLease: 75000,
+      approxMonthlyLease: 74999,
       seats: 5,
       fuelType: 'TSI Turbo Petrol',
       transmission: 'Manual / Automatic',
@@ -231,7 +228,7 @@ export const LEASE_CATALOG: Record<LeaseCategoryType, LeaseVehicleItem[]> = {
       name: 'Maruti Suzuki Ertiga',
       brand: 'Maruti Suzuki',
       category: 'muvs',
-      approxMonthlyLease: 58000,
+      approxMonthlyLease: 58999,
       seats: 7,
       fuelType: 'Petrol / CNG',
       transmission: 'Manual / AT',
@@ -246,7 +243,7 @@ export const LEASE_CATALOG: Record<LeaseCategoryType, LeaseVehicleItem[]> = {
       name: 'Maruti Suzuki Fronx',
       brand: 'Maruti Suzuki',
       category: 'muvs',
-      approxMonthlyLease: 60000,
+      approxMonthlyLease: 59999,
       seats: 5,
       fuelType: 'Petrol / Turbo',
       transmission: 'Manual / Automatic',
@@ -261,12 +258,12 @@ export const LEASE_CATALOG: Record<LeaseCategoryType, LeaseVehicleItem[]> = {
       name: 'Tata Nexon',
       brand: 'Tata Motors',
       category: 'muvs',
-      approxMonthlyLease: 62000,
+      approxMonthlyLease: 61999,
       seats: 5,
       fuelType: 'Petrol / Diesel / EV',
       transmission: 'Manual / DCA',
       image: '/assets/aistudio/nexon.png',
-      tagline: 'Indias Safest 5-Star Compact SUV',
+      tagline: "India's Safest 5-Star Compact SUV",
       keyFeatures: ['5-Star BNCAP Crash Rating', '208mm SUV Ground Clearance', '360 HD Camera'],
       idealFor: 'Safety-conscious corporate professionals, industrial engineers, and weekend getaways',
       isPopular: true,
@@ -276,7 +273,7 @@ export const LEASE_CATALOG: Record<LeaseCategoryType, LeaseVehicleItem[]> = {
       name: 'Kia Carens',
       brand: 'Kia',
       category: 'muvs',
-      approxMonthlyLease: 65000,
+      approxMonthlyLease: 64999,
       seats: 7,
       fuelType: 'Petrol / Diesel',
       transmission: 'Manual / DCT / AT',
@@ -291,7 +288,7 @@ export const LEASE_CATALOG: Record<LeaseCategoryType, LeaseVehicleItem[]> = {
       name: 'Maruti Suzuki XL6',
       brand: 'Maruti Suzuki',
       category: 'muvs',
-      approxMonthlyLease: 62000,
+      approxMonthlyLease: 62999,
       seats: 6,
       fuelType: 'Petrol / CNG',
       transmission: 'Manual / AT',
@@ -306,13 +303,13 @@ export const LEASE_CATALOG: Record<LeaseCategoryType, LeaseVehicleItem[]> = {
       name: 'Mahindra Bolero Neo',
       brand: 'Mahindra',
       category: 'muvs',
-      approxMonthlyLease: 54000,
+      approxMonthlyLease: 54999,
       seats: 7,
       fuelType: 'Diesel',
       transmission: 'Manual',
       image: '/assets/aistudio/bolero_neo.png',
       tagline: 'Rugged Ladder-Frame Multi-Utility Carrier',
-      keyFeatures: ['High Ground Clearance (180mm)', 'mHawk Diesel Torque', 'Dough-Terrain Toughness'],
+      keyFeatures: ['High Ground Clearance (180mm)', 'mHawk Diesel Torque', 'All-Terrain Toughness'],
       idealFor: 'MIDC industrial plants, construction site logistics, and Raigad / Konkan terrain',
       isPopular: false,
     },
@@ -323,7 +320,7 @@ export const LEASE_CATALOG: Record<LeaseCategoryType, LeaseVehicleItem[]> = {
       name: 'Toyota Innova Crysta',
       brand: 'Toyota',
       category: 'suvs',
-      approxMonthlyLease: 82000,
+      approxMonthlyLease: 81999,
       seats: 7,
       fuelType: 'Diesel',
       transmission: 'Manual',
@@ -338,7 +335,7 @@ export const LEASE_CATALOG: Record<LeaseCategoryType, LeaseVehicleItem[]> = {
       name: 'Toyota Innova Hycross',
       brand: 'Toyota',
       category: 'suvs',
-      approxMonthlyLease: 92000,
+      approxMonthlyLease: 91999,
       seats: 7,
       fuelType: 'Strong Hybrid Petrol',
       transmission: 'e-CVT Automatic',
@@ -353,7 +350,7 @@ export const LEASE_CATALOG: Record<LeaseCategoryType, LeaseVehicleItem[]> = {
       name: 'Hyundai Creta',
       brand: 'Hyundai',
       category: 'suvs',
-      approxMonthlyLease: 68000,
+      approxMonthlyLease: 67999,
       seats: 5,
       fuelType: 'Petrol / Diesel',
       transmission: 'Manual / IVT / DCT',
@@ -368,7 +365,7 @@ export const LEASE_CATALOG: Record<LeaseCategoryType, LeaseVehicleItem[]> = {
       name: 'Kia Seltos',
       brand: 'Kia',
       category: 'suvs',
-      approxMonthlyLease: 69000,
+      approxMonthlyLease: 68999,
       seats: 5,
       fuelType: 'Petrol / Diesel / Turbo',
       transmission: 'Manual / iMT / AT',
@@ -383,7 +380,7 @@ export const LEASE_CATALOG: Record<LeaseCategoryType, LeaseVehicleItem[]> = {
       name: 'Mahindra Scorpio-N',
       brand: 'Mahindra',
       category: 'suvs',
-      approxMonthlyLease: 84000,
+      approxMonthlyLease: 83999,
       seats: 7,
       fuelType: 'Diesel / Petrol',
       transmission: 'Manual / 6-Speed AT',
@@ -398,7 +395,7 @@ export const LEASE_CATALOG: Record<LeaseCategoryType, LeaseVehicleItem[]> = {
       name: 'Tata Sierra / Safari',
       brand: 'Tata Motors',
       category: 'suvs',
-      approxMonthlyLease: 89000,
+      approxMonthlyLease: 88999,
       seats: 7,
       fuelType: 'Diesel',
       transmission: 'Manual / Automatic',
@@ -427,8 +424,8 @@ export default function FareCalculator({ onTransferToQuote }: FareCalculatorProp
   // Selected vehicle for detailed breakdown
   const [selectedVehicleId, setSelectedVehicleId] = useState<string>('maruti-wagonr');
 
-  // Interactive lease tenure selection
-  const [leaseTenureMonths, setLeaseTenureMonths] = useState<12 | 24 | 36>(24);
+  // Interactive lease tenure selection (12, 24, 36, 60 [5 yrs], 120 [10 yrs])
+  const [leaseTenureMonths, setLeaseTenureMonths] = useState<number>(24);
 
   // Optional Chauffeur service toggle
   const [includeChauffeur, setIncludeChauffeur] = useState<boolean>(false);
@@ -457,8 +454,10 @@ export default function FareCalculator({ onTransferToQuote }: FareCalculatorProp
     const baseMonthly = selectedVehicle.approxMonthlyLease;
     // Longer tenure gives slight per-month optimization
     let tenureDiscountFactor = 1.0;
-    if (leaseTenureMonths === 36) tenureDiscountFactor = 0.94; // 6% discount for 3-yr lease
-    if (leaseTenureMonths === 12) tenureDiscountFactor = 1.08; // 8% adjustment for short 1-yr lease
+    if (leaseTenureMonths === 36) tenureDiscountFactor = 0.94; // 6% discount for 3-yr
+    if (leaseTenureMonths === 60) tenureDiscountFactor = 0.88; // 12% discount for 5-yr
+    if (leaseTenureMonths === 120) tenureDiscountFactor = 0.80; // 20% discount for 10-yr
+    if (leaseTenureMonths === 12) tenureDiscountFactor = 1.08; // 8% adjustment for short 1-yr
 
     const adjustedCarLease = Math.round(baseMonthly * tenureDiscountFactor);
     const chauffeurCost = includeChauffeur ? 22000 : 0; // standard full-time verified chauffeur
@@ -501,7 +500,7 @@ export default function FareCalculator({ onTransferToQuote }: FareCalculatorProp
           </p>
 
           <p className="mt-1.5 text-xs sm:text-sm text-slate-500">
-            Available across Navi Mumbai, Mumbai, Thane, and Raigad. Zero down payment, full maintenance & 100% tax-deductible options.
+            Available across Navi Mumbai, Mumbai, Thane, and Raigad. Zero down payment, full maintenance &amp; 100% tax-deductible options.
           </p>
         </div>
 
@@ -717,25 +716,31 @@ export default function FareCalculator({ onTransferToQuote }: FareCalculatorProp
                 </div>
               </div>
 
-              {/* Middle Column: Tenure & Chauffeur selector */}
+              {/* Middle Column: Tenure (12m, 24m, 36m, 5yrs [60m], 10yrs [120m]) & Chauffeur selector */}
               <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
                     Lease Tenure
                   </label>
-                  <div className="grid grid-cols-3 gap-1.5 bg-slate-800/80 p-1 rounded-xl border border-slate-700">
-                    {[12, 24, 36].map((months) => (
+                  <div className="grid grid-cols-5 gap-1 bg-slate-800/80 p-1 rounded-xl border border-slate-700">
+                    {[
+                      { months: 12, label: '12 Mo' },
+                      { months: 24, label: '24 Mo' },
+                      { months: 36, label: '36 Mo' },
+                      { months: 60, label: '5 Yrs' },
+                      { months: 120, label: '10 Yrs' },
+                    ].map((item) => (
                       <button
-                        key={months}
+                        key={item.months}
                         type="button"
-                        onClick={() => setLeaseTenureMonths(months as 12 | 24 | 36)}
-                        className={`py-2 text-xs font-bold rounded-lg transition-all ${
-                          leaseTenureMonths === months
+                        onClick={() => setLeaseTenureMonths(item.months)}
+                        className={`py-2 px-1 text-[11px] font-bold rounded-lg transition-all text-center ${
+                          leaseTenureMonths === item.months
                             ? 'bg-amber-400 text-slate-950 shadow-sm'
                             : 'text-slate-300 hover:text-white'
                         }`}
                       >
-                        {months} Mo
+                        {item.label}
                       </button>
                     ))}
                   </div>
@@ -776,7 +781,7 @@ export default function FareCalculator({ onTransferToQuote }: FareCalculatorProp
                   <button
                     type="button"
                     onClick={handleSendWhatsAppQuote}
-                    className="px-4 py-2 bg-[#F4B41A] hover:bg-[#E0A212] text-slate-950 font-extrabold text-xs rounded-lg transition-transform hover:scale-102 shadow-sm flex items-center gap-1.5"
+                    className="px-4 py-2 bg-[#F4B41A] hover:bg-[#E0A212] text-slate-950 font-extrabold text-xs rounded-lg transition-transform hover:scale-102 shadow-sm flex items-center gap-1.5 cursor-pointer"
                   >
                     <MessageSquare className="w-3.5 h-3.5" />
                     <span>WhatsApp Quote</span>
@@ -791,7 +796,7 @@ export default function FareCalculator({ onTransferToQuote }: FareCalculatorProp
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs text-slate-700">
               <div className="flex items-center gap-2">
                 <Wrench className="w-4 h-4 text-amber-600 shrink-0" />
-                <span>100% Free Maintenance & Oil Servicing</span>
+                <span>100% Free Maintenance &amp; Oil Servicing</span>
               </div>
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
@@ -836,7 +841,7 @@ export default function FareCalculator({ onTransferToQuote }: FareCalculatorProp
               <button
                 type="button"
                 onClick={() => handleTransferToQuoteForm()}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#F4B41A] text-slate-950 font-extrabold text-xs sm:text-sm hover:bg-[#E0A212] transition-colors shadow-md whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#F4B41A] text-slate-950 font-extrabold text-xs sm:text-sm hover:bg-[#E0A212] transition-colors shadow-md whitespace-nowrap cursor-pointer"
               >
                 <span>Request Custom Car Lease</span>
                 <ArrowRight className="w-4 h-4" />
