@@ -491,13 +491,7 @@ export default function FareCalculator({ onTransferToQuote }: FareCalculatorProp
   return (
     <section id="calculator" className="py-20 bg-slate-50 border-y border-slate-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header with exact requested text */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 text-xs font-bold text-amber-800 tracking-wider uppercase bg-amber-100/80 border border-amber-300/80 px-3.5 py-1 rounded-full mb-3 shadow-xs">
-            <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-            <span>Vehicles On Lease</span>
-          </div>
-
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight text-balance">
             Vehicles on Lease We Provide
           </h2>
