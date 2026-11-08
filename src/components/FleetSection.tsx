@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { FLEET_VEHICLES } from '../data/fleetData';
 import { Vehicle, VehicleCategory } from '../types';
 import { Users, Briefcase, Fuel, Shield, CheckCircle, ArrowRight, X, Phone } from 'lucide-react';
+import { trackVehicleView } from '../utils/analytics';
 
 interface FleetSectionProps {
   onSelectCarForQuote: (carName: string) => void;
@@ -162,7 +163,16 @@ export default function FleetSection({ onSelectCarForQuote }: FleetSectionProps)
               <div className="px-5 pb-5 pt-2 grid grid-cols-2 gap-2 border-t border-slate-100">
                 <button
                   type="button"
-                  onClick={() => setActiveModalVehicle(car)}
+                  onClick={() => {
+                    trackVehicleView({
+                      id: car.id,
+                      name: car.name,
+                      brand: car.brand,
+                      category: car.category,
+                      price: car.monthlyFixedEst,
+                    });
+                    setActiveModalVehicle(car);
+                  }}
                   className="py-2.5 px-3 rounded-lg border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-semibold transition-colors text-center"
                 >
                   View Details & Specs

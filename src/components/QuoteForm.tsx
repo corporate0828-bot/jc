@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { FLEET_VEHICLES, SERVICE_ITEMS } from '../data/fleetData';
 import { InquiryRecord } from '../types';
 import { MessageSquare, Send, CheckCircle2, Copy, Check, Clock } from 'lucide-react';
+import { trackFormSubmission } from '../utils/analytics';
 
 interface QuoteFormProps {
   initialService?: string;
@@ -72,6 +73,15 @@ export default function QuoteForm({
     // Store in localStorage
     saveToStorage(record);
 
+    // Track lead event in GA4 without PII
+    trackFormSubmission({
+      service,
+      carName: car,
+      numCars,
+      channel: 'whatsapp',
+      estimatedTotal: estimatedFare,
+    });
+
     const text = `Hello Jyotirling Car Leasing &amp; Mobility,%0A%0A*Quotation Enquiry [${record.id}]*%0A- *Name:* ${encodeURIComponent(name)}%0A- *Mobile:* ${encodeURIComponent(mobile)}%0A- *Company:* ${encodeURIComponent(company || 'Individual / Family')}%0A- *Service Required:* ${encodeURIComponent(service)}%0A- *Car Required:* ${encodeURIComponent(car)}%0A- *Number of Cars:* ${numCars}%0A- *Date Required:* ${encodeURIComponent(date || 'Flexible')}%0A- *Duration / Basis:* ${encodeURIComponent(duration || 'As per package')}%0A- *Pickup / Route:* ${encodeURIComponent(pickup || 'Not specified')}%0A- *Notes / Details:* ${encodeURIComponent(message || 'None')}${estimatedFare ? `%0A- *Calculated Estimate:* Rs. ${estimatedFare.toLocaleString('en-IN')}` : ''}%0A%0APlease confirm availability and share final quote.`;
 
     window.open(`https://wa.me/917038340008?text=${text}`, '_blank');
@@ -86,6 +96,16 @@ export default function QuoteForm({
 
     const record = generateInquiryRecord();
     saveToStorage(record);
+
+    // Track lead event in GA4 without PII
+    trackFormSubmission({
+      service,
+      carName: car,
+      numCars,
+      channel: 'direct_inquiry',
+      estimatedTotal: estimatedFare,
+    });
+
     setSubmittedRecord(record);
     if (onSuccessSubmit) onSuccessSubmit(record);
   };

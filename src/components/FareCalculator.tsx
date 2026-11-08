@@ -11,6 +11,7 @@ import {
   Wrench,
   FileCheck2,
 } from 'lucide-react';
+import { trackVehicleView, trackQuoteButtonClick } from '../utils/analytics';
 
 export interface LeaseVehicleItem {
   id: string;
@@ -568,7 +569,16 @@ export default function FareCalculator({ onTransferToQuote }: FareCalculatorProp
               return (
                 <div
                   key={vehicle.id}
-                  onClick={() => setSelectedVehicleId(vehicle.id)}
+                  onClick={() => {
+                    setSelectedVehicleId(vehicle.id);
+                    trackVehicleView({
+                      id: vehicle.id,
+                      name: vehicle.name,
+                      brand: vehicle.brand,
+                      category: vehicle.category,
+                      price: vehicle.approxMonthlyLease,
+                    });
+                  }}
                   className={`group relative bg-white rounded-2xl border transition-all duration-300 overflow-hidden flex flex-col justify-between cursor-pointer ${
                     isSelected
                       ? 'border-amber-500 shadow-xl ring-2 ring-amber-400/40 -translate-y-1'
@@ -840,7 +850,10 @@ export default function FareCalculator({ onTransferToQuote }: FareCalculatorProp
 
               <button
                 type="button"
-                onClick={() => handleTransferToQuoteForm()}
+                onClick={() => {
+                  trackQuoteButtonClick('Request Custom Car Lease', 'Custom Fleet Guarantee');
+                  handleTransferToQuoteForm();
+                }}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#F4B41A] text-slate-950 font-extrabold text-xs sm:text-sm hover:bg-[#E0A212] transition-colors shadow-md whitespace-nowrap cursor-pointer"
               >
                 <span>Request Custom Car Lease</span>

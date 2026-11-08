@@ -12,6 +12,11 @@ import Footer from './components/Footer';
 import FloatingActions from './components/FloatingActions';
 import TermsPage from './components/TermsPage';
 import { InquiryRecord } from './types';
+import {
+  initAnalyticsAutoTracking,
+  trackPageView,
+  trackQuoteButtonClick,
+} from './utils/analytics';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'terms'>(() => {
@@ -38,6 +43,12 @@ export default function App() {
 
   // Stored inquiries
   const [inquiries, setInquiries] = useState<InquiryRecord[]>([]);
+
+  // Initialize automatic GA4 click listener for phone & WhatsApp
+  useEffect(() => {
+    const cleanup = initAnalyticsAutoTracking();
+    return cleanup;
+  }, []);
 
   useEffect(() => {
     try {
@@ -69,6 +80,29 @@ export default function App() {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
+  // Track page_view on initial load and route changes (avoids duplicates)
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const path = window.location.pathname.toLowerCase().replace(/\/$/, '') || '/';
+    let title = 'Jyotirling Car Leasing & Mobility - Car Leasing for Companies & Individuals';
+
+    if (currentPage === 'terms') {
+      title = 'Terms & Conditions & Policies | Jyotirling Car Leasing & Mobility';
+    } else if (path === '/corporate-car-leasing') {
+      title = 'Corporate Car Leasing | Jyotirling Car Leasing & Mobility';
+    } else if (path === '/monthly-car-leasing') {
+      title = 'Monthly Car Leasing Contracts | Jyotirling Car Leasing & Mobility';
+    } else if (path === '/vehicles') {
+      title = 'Vehicles on Lease & Fleet | Jyotirling Car Leasing & Mobility';
+    } else if (path === '/who-we-serve') {
+      title = 'Who We Serve | Jyotirling Car Leasing & Mobility';
+    } else if (path === '/contact') {
+      title = 'Contact & Instant Quote | Jyotirling Car Leasing & Mobility';
+    }
+
+    trackPageView(path, title);
+  }, [currentPage]);
+
   // Handle direct page/section routing on load
   useEffect(() => {
     if (typeof window === 'undefined' || currentPage === 'terms') return;
@@ -96,6 +130,7 @@ export default function App() {
       window.history.pushState(null, '', '/terms-and-conditions');
     }
     setCurrentPage('terms');
+    trackQuoteButtonClick('Terms and Conditions Opened');
   };
 
   const handleBackToHome = () => {
@@ -111,6 +146,7 @@ export default function App() {
     setQuotePresetFare(undefined);
     setQuotePresetNotes(undefined);
     setIsQuoteModalOpen(true);
+    trackQuoteButtonClick('Quote Modal Opened', presetService || presetCar || 'General Quote');
   };
 
   const handleSelectCarForQuote = (carName: string) => {
@@ -119,6 +155,7 @@ export default function App() {
     setQuotePresetFare(undefined);
     setQuotePresetNotes(undefined);
     setIsQuoteModalOpen(true);
+    trackQuoteButtonClick('Get Quote For Car', carName);
   };
 
   const handleSelectService = (serviceTitle: string) => {
@@ -127,6 +164,7 @@ export default function App() {
     setQuotePresetFare(undefined);
     setQuotePresetNotes(undefined);
     setIsQuoteModalOpen(true);
+    trackQuoteButtonClick('Enquire Service Sector', serviceTitle);
   };
 
   const handleTransferFromCalculator = (details: {
