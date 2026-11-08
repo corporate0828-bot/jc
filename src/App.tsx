@@ -14,7 +14,19 @@ import TermsPage from './components/TermsPage';
 import { InquiryRecord } from './types';
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'terms'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'terms'>(() => {
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname.toLowerCase().replace(/\/$/, '');
+      if (
+        path === '/terms' ||
+        path === '/terms-and-conditions' ||
+        path === '/cancellation-refund-policy'
+      ) {
+        return 'terms';
+      }
+    }
+    return 'home';
+  });
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [isInquiryDrawerOpen, setIsInquiryDrawerOpen] = useState(false);
 
@@ -37,6 +49,61 @@ export default function App() {
       // ignore
     }
   }, []);
+
+  // Listen for browser forward/back buttons
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const handlePopState = () => {
+      const path = window.location.pathname.toLowerCase().replace(/\/$/, '');
+      if (
+        path === '/terms' ||
+        path === '/terms-and-conditions' ||
+        path === '/cancellation-refund-policy'
+      ) {
+        setCurrentPage('terms');
+      } else {
+        setCurrentPage('home');
+      }
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // Handle direct page/section routing on load
+  useEffect(() => {
+    if (typeof window === 'undefined' || currentPage === 'terms') return;
+    const path = window.location.pathname.toLowerCase().replace(/\/$/, '');
+    const timer = setTimeout(() => {
+      if (path === '/corporate-car-leasing' || path === '/monthly-car-leasing') {
+        const el = document.getElementById('calculator');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      } else if (path === '/vehicles' || path === '/fleet') {
+        const el = document.getElementById('fleet');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      } else if (path === '/who-we-serve' || path === '/sectors') {
+        const el = document.getElementById('sectors');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      } else if (path === '/contact') {
+        const el = document.getElementById('contact');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 150);
+    return () => clearTimeout(timer);
+  }, [currentPage]);
+
+  const handleOpenTerms = () => {
+    if (typeof window !== 'undefined' && window.history) {
+      window.history.pushState(null, '', '/terms-and-conditions');
+    }
+    setCurrentPage('terms');
+  };
+
+  const handleBackToHome = () => {
+    if (typeof window !== 'undefined' && window.history) {
+      window.history.pushState(null, '', '/');
+    }
+    setCurrentPage('home');
+  };
 
   const handleOpenQuoteModal = (presetService?: string, presetCar?: string) => {
     setQuotePresetService(presetService);
@@ -110,13 +177,13 @@ export default function App() {
       <Navbar
         onOpenQuoteModal={() => handleOpenQuoteModal()}
         onOpenInquiryDrawer={() => setIsInquiryDrawerOpen(true)}
-        onOpenTerms={() => setCurrentPage('terms')}
+        onOpenTerms={handleOpenTerms}
         inquiryCount={inquiries.length}
       />
 
       <main className="flex-1">
         {currentPage === 'terms' ? (
-          <TermsPage onBackToHome={() => setCurrentPage('home')} />
+          <TermsPage onBackToHome={handleBackToHome} />
         ) : (
           <>
             {/* Hero Section */}
@@ -128,7 +195,7 @@ export default function App() {
             {/* Sectors We Provide Services To */}
             <SectorsServed
               onSelectSector={handleSelectService}
-              onOpenTerms={() => setCurrentPage('terms')}
+              onOpenTerms={handleOpenTerms}
             />
 
             {/* Instant Fare Estimator & Rate Calculator */}
@@ -147,7 +214,7 @@ export default function App() {
             {/* Contact Office & Quotation Form */}
             <ContactSection
               onInquirySubmitted={handleInquirySubmitted}
-              onOpenTerms={() => setCurrentPage('terms')}
+              onOpenTerms={handleOpenTerms}
               presetCar={quotePresetCar}
               presetService={quotePresetService}
               presetEstimatedFare={quotePresetFare}
