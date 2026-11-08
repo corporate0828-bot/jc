@@ -35,7 +35,7 @@ export const LEASE_CATEGORIES = [
   { id: 'hatchback', label: 'Hatchback', count: 6, minCost: 39999 },
   { id: 'sedan', label: 'Sedan', count: 6, minCost: 46000 },
   { id: 'muvs', label: "MUV's", count: 6, minCost: 54000 },
-  { id: 'suvs', label: "SUV's", count: 6, minCost: 52000 },
+  { id: 'suvs', label: "SUV's", count: 6, minCost: 60000 },
 ] as const;
 
 export type LeaseCategoryType = (typeof LEASE_CATEGORIES)[number]['id'];
@@ -242,34 +242,34 @@ export const LEASE_CATALOG: Record<LeaseCategoryType, LeaseVehicleItem[]> = {
       isPopular: true,
     },
     {
-      id: 'toyota-innova-crysta',
-      name: 'Toyota Innova Crysta',
-      brand: 'Toyota',
+      id: 'maruti-fronx',
+      name: 'Maruti Suzuki Fronx',
+      brand: 'Maruti Suzuki',
       category: 'muvs',
-      approxMonthlyLease: 82000,
-      seats: 7,
-      fuelType: 'Diesel',
-      transmission: 'Manual',
-      image: '/assets/aistudio/innova.png',
-      tagline: 'Unmatched Reliability & Captain Comfort',
-      keyFeatures: ['Captain Recliner Seats', 'Legendary 2.4L Diesel Engine', 'Supreme Highway Comfort'],
-      idealFor: 'Corporate leadership, government delegations, and VIP industrial inspections',
+      approxMonthlyLease: 60000,
+      seats: 5,
+      fuelType: 'Petrol / Turbo',
+      transmission: 'Manual / Automatic',
+      image: '/assets/aistudio/fronx.png',
+      tagline: 'Sporty Urban Coupe Crossover',
+      keyFeatures: ['High 190mm Ground Clearance', 'Heads-Up Display', 'Muscular Road Stance'],
+      idealFor: 'Young executives, daily Mumbai-Navi Mumbai commute, and stylish personal mobility',
       isPopular: true,
     },
     {
-      id: 'toyota-innova-hycross',
-      name: 'Toyota Innova Hycross',
-      brand: 'Toyota',
+      id: 'tata-nexon',
+      name: 'Tata Nexon',
+      brand: 'Tata Motors',
       category: 'muvs',
-      approxMonthlyLease: 92000,
-      seats: 7,
-      fuelType: 'Strong Hybrid Petrol',
-      transmission: 'e-CVT Automatic',
-      image: '/assets/aistudio/innova.png',
-      tagline: 'Ultra-Luxury Ottoman Hybrid Lounge',
-      keyFeatures: ['Powered Ottoman Lounge Seats', 'Panoramic Sunroof', '21+ km/l Hybrid Mileage'],
-      idealFor: 'Managing Directors, international delegates, and luxury long-term corporate lease',
-      isPopular: false,
+      approxMonthlyLease: 62000,
+      seats: 5,
+      fuelType: 'Petrol / Diesel / EV',
+      transmission: 'Manual / DCA',
+      image: '/assets/aistudio/nexon.png',
+      tagline: 'Indias Safest 5-Star Compact SUV',
+      keyFeatures: ['5-Star BNCAP Crash Rating', '208mm SUV Ground Clearance', '360 HD Camera'],
+      idealFor: 'Safety-conscious corporate professionals, industrial engineers, and weekend getaways',
+      isPopular: true,
     },
     {
       id: 'kia-carens',
@@ -319,34 +319,34 @@ export const LEASE_CATALOG: Record<LeaseCategoryType, LeaseVehicleItem[]> = {
   ],
   suvs: [
     {
-      id: 'maruti-fronx',
-      name: 'Maruti Suzuki Fronx',
-      brand: 'Maruti Suzuki',
+      id: 'toyota-innova-crysta',
+      name: 'Toyota Innova Crysta',
+      brand: 'Toyota',
       category: 'suvs',
-      approxMonthlyLease: 52000,
-      seats: 5,
-      fuelType: 'Petrol / Turbo',
-      transmission: 'Manual / Automatic',
-      image: '/assets/aistudio/fronx.png',
-      tagline: 'Sporty Urban Coupe Crossover',
-      keyFeatures: ['High 190mm Ground Clearance', 'Heads-Up Display', 'Muscular Road Stance'],
-      idealFor: 'Young executives, daily Mumbai-Navi Mumbai commute, and stylish personal mobility',
+      approxMonthlyLease: 82000,
+      seats: 7,
+      fuelType: 'Diesel',
+      transmission: 'Manual',
+      image: '/assets/aistudio/innova.png',
+      tagline: 'Unmatched Reliability & Captain Comfort',
+      keyFeatures: ['Captain Recliner Seats', 'Legendary 2.4L Diesel Engine', 'Supreme Highway Comfort'],
+      idealFor: 'Corporate leadership, government delegations, and VIP industrial inspections',
       isPopular: true,
     },
     {
-      id: 'tata-nexon',
-      name: 'Tata Nexon',
-      brand: 'Tata Motors',
+      id: 'toyota-innova-hycross',
+      name: 'Toyota Innova Hycross',
+      brand: 'Toyota',
       category: 'suvs',
-      approxMonthlyLease: 54000,
-      seats: 5,
-      fuelType: 'Petrol / Diesel / EV',
-      transmission: 'Manual / DCA',
-      image: '/assets/aistudio/nexon.png',
-      tagline: 'Indias Safest 5-Star Compact SUV',
-      keyFeatures: ['5-Star BNCAP Crash Rating', '208mm SUV Ground Clearance', '360 HD Camera'],
-      idealFor: 'Safety-conscious corporate professionals, industrial engineers, and weekend getaways',
-      isPopular: true,
+      approxMonthlyLease: 92000,
+      seats: 7,
+      fuelType: 'Strong Hybrid Petrol',
+      transmission: 'e-CVT Automatic',
+      image: '/assets/aistudio/innova.png',
+      tagline: 'Ultra-Luxury Ottoman Hybrid Lounge',
+      keyFeatures: ['Powered Ottoman Lounge Seats', 'Panoramic Sunroof', '21+ km/l Hybrid Mileage'],
+      idealFor: 'Managing Directors, international delegates, and luxury long-term corporate lease',
+      isPopular: false,
     },
     {
       id: 'hyundai-creta',
@@ -644,7 +644,7 @@ export default function FareCalculator({ onTransferToQuote }: FareCalculatorProp
                     <div className="flex items-baseline justify-between mb-3">
                       <div>
                         <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">
-                          Approx Monthly Lease
+                          Starting just at
                         </div>
                         <div className="flex items-baseline gap-1">
                           <span className="text-2xl font-black font-mono text-[#0A1C38] tracking-tight">
@@ -810,24 +810,24 @@ export default function FareCalculator({ onTransferToQuote }: FareCalculatorProp
         </div>
 
         {/* "Whichever car you want" Custom Promise Card */}
-        <div className="relative rounded-2xl bg-gradient-to-r from-[#0A1C38] via-slate-900 to-[#0A1C38] p-8 text-white overflow-hidden shadow-lg border border-slate-800">
+        <div className="relative rounded-2xl bg-gradient-to-r from-[#0A1C38] via-slate-900 to-[#0A1C38] p-5 sm:p-8 text-white overflow-hidden shadow-lg border border-slate-800">
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="max-w-2xl text-center md:text-left">
-              <span className="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-950/80 border border-amber-800 px-3 py-1 rounded-full">
+              <span className="inline-block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-950/80 border border-amber-800 px-3 py-1 rounded-full mb-3">
                 Custom Fleet Procurement Guarantee
               </span>
-              <h3 className="text-2xl sm:text-3xl font-black text-white mt-3">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white">
                 Do you have a specific car, color, or model in mind?
               </h3>
-              <p className="text-slate-300 text-sm mt-2 leading-relaxed">
+              <p className="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed">
                 Whether you need a Mercedes-Benz, BMW, Skoda Octavia, Mahindra Thar, or a fleet of 20 commercial EVs, we will source, finance, insure, and deliver whichever car you want starting from just Rupees 39,999.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+            <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
               <a
                 href="tel:7038340008"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white text-slate-950 font-extrabold text-sm hover:bg-slate-100 transition-colors shadow-sm"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white text-slate-950 font-extrabold text-xs sm:text-sm hover:bg-slate-100 transition-colors shadow-sm whitespace-nowrap"
               >
                 <Phone className="w-4 h-4 text-[#0A1C38]" />
                 <span>Call +91 7038340008</span>
@@ -836,7 +836,7 @@ export default function FareCalculator({ onTransferToQuote }: FareCalculatorProp
               <button
                 type="button"
                 onClick={() => handleTransferToQuoteForm()}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#F4B41A] text-slate-950 font-extrabold text-sm hover:bg-[#E0A212] transition-colors shadow-md"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#F4B41A] text-slate-950 font-extrabold text-xs sm:text-sm hover:bg-[#E0A212] transition-colors shadow-md whitespace-nowrap"
               >
                 <span>Request Custom Car Lease</span>
                 <ArrowRight className="w-4 h-4" />

@@ -90,7 +90,7 @@ export const SECTORS_DATA = [
 const WHAT_WE_SERVE_POINTS = [
   'Corporate Car Leasing',
   'Monthly Car Leasing',
-  'Long-Term Car Leasing',
+  'Mid and long term car leasing',
   'Corporate Employee Transportation',
   'Car Rental',
   'Tour & Travels',

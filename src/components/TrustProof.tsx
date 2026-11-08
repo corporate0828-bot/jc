@@ -115,7 +115,7 @@ export default function TrustProof() {
               id="why-choose-heading"
               className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-[#0A1C38] tracking-tight leading-[1.15] text-balance mb-4"
             >
-              Why Choose Jyotirlinga Cars?
+              Why Choose Jyotirling Cars?
             </h2>
 
             <p className="text-base sm:text-lg lg:text-xl font-semibold text-slate-700 leading-snug text-balance mb-4">
@@ -125,7 +125,7 @@ export default function TrustProof() {
             <p className="text-xs sm:text-sm text-slate-500 max-w-2xl mx-auto leading-relaxed">
               Whether you are looking for an <strong>affordable car rental in Navi Mumbai</strong>, corporate{' '}
               <strong>cars on lease in Mumbai</strong>, flexible <strong>monthly car rental</strong> in Thane, or dependable{' '}
-              <strong>car leasing services in Raigad</strong>, Jyotirlinga Cars provides vetted drivers, spotless vehicles, and transparent commercial contracts.
+              <strong>car leasing services in Raigad</strong>, Jyotirling Cars provides vetted drivers, spotless vehicles, and transparent commercial contracts.
             </p>
 
             {/* Quick Regional Coverage Indicators */}
@@ -228,7 +228,7 @@ export default function TrustProof() {
                 Call +91 7038340008
               </a>
               <a
-                href="https://wa.me/917038340008?text=Hello%20Jyotirlinga%20Cars%2C%20I%20would%20like%20to%20enquire%20about%20car%20rental%20and%20leasing%20options."
+                href="https://wa.me/917038340008?text=Hello%20Jyotirling%20Cars%2C%20I%20would%20like%20to%20enquire%20about%20car%20rental%20and%20leasing%20options."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-xs sm:text-sm border border-white/20 transition-all hover:-translate-y-0.5"

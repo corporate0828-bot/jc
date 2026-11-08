@@ -55,6 +55,11 @@ export default function Hero({ onOpenQuoteModal }: HeroProps) {
               Drive Your Business &amp; Life Forward
             </h2>
 
+            {/* Tagline Callout */}
+            <div className="text-base sm:text-lg text-amber-100 font-medium mb-5 bg-[#0A1C38]/80 border-l-4 border-[#F4B41A] px-4 py-2.5 rounded-r-xl shadow-sm backdrop-blur-sm">
+              Why Buy a Car When You Can Get a Complete Car Rental Solution at a Fixed Monthly Cost?
+            </div>
+
             {/* 3 Copy bullets matching exact image copy */}
             <div className="space-y-1.5 text-sm sm:text-base mb-7">
               <p className="text-white font-medium flex items-center gap-2">
